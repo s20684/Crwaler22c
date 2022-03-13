@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.RegularExpressions;
@@ -13,26 +13,50 @@ namespace Crawler
             var websiteUrl = args[0];
             Console.WriteLine(websiteUrl);
 
-            //HttpClient httpClient = new HttpClient();
+            if (args.Length < 1){
+                Console.WriteLine("Brak argumentów");
+                throw new ArgumentNullException();  
+            }
+
+            if (!(Uri.IsWellFormedUriString(websiteUrl, UriKind.Absolute))){
+                Console.WriteLine("Niepoprawny adres URL");
+                throw new ArgumentException();
+            }
 
             var httpClient = new HttpClient();
 
-            var response = await httpClient.GetAsync(websiteUrl);
-            //Console.WriteLine(response);
-            var content = await response.Content.ReadAsStringAsync();
-            //Console.WriteLine(content);
-            //var regex = new Regex("\\w{5}@pja.edu.pl");
-            //var regex = new Regex("\\w{5}@\\w{3}.\\w{3}.\\w{2}");
-            //var regex = new Regex("\\w{5}@.*");
-            var regex = new Regex("([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)");
-            //var a = $"Content {content}";
-            //var b = @"\.-]";
+            try
+            {
+                var response = await httpClient.GetAsync(websiteUrl);
+                var content = await response.Content.ReadAsStringAsync();
+                var regex = new Regex("([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)");
+                var matchCollection = regex.Matches(content);
+                if (matchCollection.Count == 0)
+                {
+                    Console.WriteLine("Nie znaleziono adresów email");
+                }
+                else
+                {
+                    HashSet<String> hashSetMatch = new();
+                    foreach (Match matchItem in matchCollection)
+                    {
+                        hashSetMatch.Add(matchItem.Value);
+                    }
+                    if (hashSetMatch.Count >= 1)
+                        foreach (string item in hashSetMatch)
+                            Console.WriteLine(item);
+                }
 
-            var matchCollection = regex.Matches(content);
-            foreach (var item in matchCollection) {
-                Console.WriteLine(item);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Błąd w czasie pobierania strony");
+            }
+            finally
+            {
+                httpClient.Dispose();
+            }
             }
             
         }
     }
-}
