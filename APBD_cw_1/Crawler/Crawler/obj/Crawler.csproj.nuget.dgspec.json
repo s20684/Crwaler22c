@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\s20684\\Desktop\\git\\APBD_cw_1\\Crawler\\Crawler\\Crawler.csproj": {}
+    "C:\\Users\\Kolos\\Downloads\\Crwaler22c-master\\APBD_cw_1\\Crawler\\Crawler\\Crawler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\s20684\\Desktop\\git\\APBD_cw_1\\Crawler\\Crawler\\Crawler.csproj": {
+    "C:\\Users\\Kolos\\Downloads\\Crwaler22c-master\\APBD_cw_1\\Crawler\\Crawler\\Crawler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\s20684\\Desktop\\git\\APBD_cw_1\\Crawler\\Crawler\\Crawler.csproj",
+        "projectUniqueName": "C:\\Users\\Kolos\\Downloads\\Crwaler22c-master\\APBD_cw_1\\Crawler\\Crawler\\Crawler.csproj",
         "projectName": "Crawler",
-        "projectPath": "C:\\Users\\s20684\\Desktop\\git\\APBD_cw_1\\Crawler\\Crawler\\Crawler.csproj",
-        "packagesPath": "C:\\Users\\s20684\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\s20684\\Desktop\\git\\APBD_cw_1\\Crawler\\Crawler\\obj\\",
+        "projectPath": "C:\\Users\\Kolos\\Downloads\\Crwaler22c-master\\APBD_cw_1\\Crawler\\Crawler\\Crawler.csproj",
+        "packagesPath": "C:\\Users\\Kolos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kolos\\Downloads\\Crwaler22c-master\\APBD_cw_1\\Crawler\\Crawler\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\s20684\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Kolos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -53,12 +49,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.15, 5.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
